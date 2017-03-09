@@ -1,20 +1,15 @@
 ﻿/// <reference path="PeoplePicker.js" />
 'use strict';
 
-ExecuteOrDelayUntilScriptLoaded(initializePage, "sp.js");
+var App = window.App || {};
 
-function initializePage()
-{
-    // This code runs when the DOM is ready and creates a context object which is needed to use the SharePoint object model
+App.initializePage = function () {
+    // This code runs when the DOM is ready and creates a peoplepicker
     $(document).ready(function () {
         var peoplePicker = new OfficeUIfabric.PeoplePicker();
         peoplePicker.Components.PeoplePicker.init("_peoplePicker", false);
-        peoplePicker.Components.DomWindow();
-        //var PeoplePickerElements = document.querySelectorAll(".ms-PeoplePicker");
-        //for (var i = 0; i < PeoplePickerElements.length; i++) {
-        //    new fabric['PeoplePicker'](PeoplePickerElements[i]);
-        //}
-
+        peoplePicker.Components.PeoplePicker.init("_peoplePickerMulti", true);
     });
-
 }
+
+ExecuteOrDelayUntilScriptLoaded(App.initializePage, "sp.js");

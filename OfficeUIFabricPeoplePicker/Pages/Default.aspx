@@ -19,13 +19,19 @@
 
     <!-- Add your JavaScript to the following file -->
     <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+
+    <script src="https://publiccdn.sharepointonline.com/giuleon.sharepoint.com/1288003475c3d1387170eaaeef6bf911ba865d894569959b6bc8db4bdc9a8a121fa1ba69/OfficeUIFabricPeoplePickerAddIn/PeoplePicker.js"></script>
+    <script src="https://publiccdn.sharepointonline.com/giuleon.sharepoint.com/1288003475c3d1387170eaaeef6bf911ba865d894569959b6bc8db4bdc9a8a121fa1ba69/OfficeUIFabricPeoplePickerAddIn/App.js"></script>
+    <!-- Internal References -->
+    <!--
     <script src="../Scripts/PeoplePicker.js"></script>
     <script type="text/javascript" src="../Scripts/App.js"></script>
+    -->
 </asp:Content>
 
 <%-- The markup in the following Content element will be placed in the TitleArea of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
-    Page Title
+    Office UI Fabric People Picker Add-In Demo
 </asp:Content>
 
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
@@ -35,6 +41,13 @@
         <div class="ms-PeoplePicker-searchBox">
             <div class="ms-TextField  ms-TextField--textFieldUnderlined ">
                 <input id="_peoplePicker" class="ms-TextField-field" type="text" value="" placeholder="Select or enter an option">
+            </div>
+        </div>
+    </div>
+    <div class="ms-PeoplePicker">
+        <div class="ms-PeoplePicker-searchBox">
+            <div class="ms-TextField  ms-TextField--textFieldUnderlined ">
+                <input id="_peoplePickerMulti" class="ms-TextField-field" type="text" value="" placeholder="Select or enter an option">
             </div>
         </div>
     </div>

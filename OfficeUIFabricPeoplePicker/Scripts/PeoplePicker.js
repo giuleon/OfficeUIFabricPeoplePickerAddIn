@@ -15,6 +15,7 @@ OfficeUIfabric.PeoplePicker.prototype = {
                 var $searchField = $('#' + peoplePickerId);
                 var $searchMoreText = $('.ms-PeoplePicker-searchMoreText');
                 var searchTimeout = null;
+                DomWindow(peoplePickerId);
 
                 $($searchField).on('focus', function (e) {
                     peoplePicker.Components.Dom.openPeoplePopUp(this.id, '');
@@ -105,12 +106,14 @@ OfficeUIfabric.PeoplePicker.prototype = {
                                             '   <div class="ms-Persona-actionIcon"><i class="ms-Icon ms-Icon--Cancel"></i></div>' +
                                             '</div>';
                                         $peoplePicker.parent().before(htmlPerson);
+                                        $peoplePicker.val('');
                                         if (multi !== undefined && multi === false) {
                                             $peoplePicker.prop('disabled', true);
                                         }
 
                                         $('.ms-Persona-actionIcon').on('click', function () {
                                             $(this).parent().remove();
+                                            $peoplePicker.val('');
                                             if (multi !== undefined && multi === false) {
                                                 $peoplePicker.prop('disabled', false);
                                             }
@@ -126,17 +129,19 @@ OfficeUIfabric.PeoplePicker.prototype = {
                         }
                     }
                 })
-            },
-        },
-        DomWindow: function () {
-            $(window).on('click', function (e) {
-                if (e.target.className != "ms-ContextualHost is-positioned is-open ms-ContextualHost--" && e.target.id != "_peoplePicker1" && e.target.id != "_peoplePicker2" && e.target.id != "_peoplePickerMulti") {
-                    $('.ms-ContextualHost').remove();
-                    $('#_peoplePicker1').val('');
-                    $('#_peoplePicker2').val('');
-                    $('#_peoplePickerMulti').val('');
+
+                /*
+                 * Close the peoplepicker dialog when the user click outside of it
+                 * @param {OfficeUIFabricPeoplePicker} peoplePicker DOM Id
+                 */
+                function DomWindow(peoplePicker) {
+                    $(window).on('click', function (e) {
+                        if (e.target.className != 'ms-TextField-field') {
+                            $('.ms-ContextualHost').remove();
+                        }
+                    });
                 }
-            });
+            },
         },
         Dom: {
             openPeoplePopUp: function (peoplePickerId, htmlPeople) {
