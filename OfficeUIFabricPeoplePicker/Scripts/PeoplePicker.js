@@ -238,10 +238,14 @@ OfficeUIfabric.PeoplePicker.prototype = {
     },
     Util: {
         /*
-         * get SharePoint stage end point
+         * get SharePoint web host end point
          */
         getSharePointStage: function () {
-            return 'https://giuleon.sharepoint.com/sites/demo';
+            var name = 'SPHostUrl';
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
         }
     }
 }
