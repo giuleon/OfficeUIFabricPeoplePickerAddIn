@@ -123,7 +123,6 @@ OfficeUIfabric.PeoplePicker.prototype = {
                                 })
                                 .fail(function (error) {
                                     error.responseText = (error.responseText === "") ? "Sorry something went wrong." : error.responseText;
-                                    peoplePicker.Components.messageBarShow("ErrorBadge", "error", error.responseText);
                                     console.log(error.responseText);
                                 })
                         }
@@ -185,14 +184,14 @@ OfficeUIfabric.PeoplePicker.prototype = {
                 var currentTop = $peoplePicker.offset().top;
                 if ($('.ms-ContextualHost').length < 1) {
                     if (currentTop > 400) {
-                        var style = 'style="overflow-y: auto; max-height: 400px; left: ' +
+                        var style = 'style="overflow-x: hidden; overflow-y: auto; max-height: 400px; left: ' +
                             $peoplePicker.offset().left + 'px; top: ' +
                             ($peoplePicker.offset().top - 82) + 'px; width: ' +
                             $peoplePicker.outerWidth() + 'px;"';
                         return style;
                     }
                     else {
-                        var style = 'style="overflow-y: auto; max-height: 400px; left: ' +
+                        var style = 'style="overflow-x: hidden; overflow-y: auto; max-height: 400px; left: ' +
                             $peoplePicker.offset().left + 'px; top: ' +
                             ($peoplePicker.offset().top + 42) + 'px; width: ' +
                             $peoplePicker.outerWidth() + 'px;"';
@@ -201,13 +200,13 @@ OfficeUIfabric.PeoplePicker.prototype = {
                 }
                 else {
                     if (currentTop > 400) {
-                        var style = 'overflow-y: auto; max-height: 400px; left: ' + $peoplePicker.offset().left + 'px; top: ' +
+                        var style = 'overflow-x: hidden; overflow-y: auto; max-height: 400px; left: ' + $peoplePicker.offset().left + 'px; top: ' +
                             ($peoplePicker.offset().top - $('.ms-ContextualHost').outerHeight()) + 'px; width: ' +
                             $peoplePicker.outerWidth() + 'px';
                         return style;
                     }
                     else {
-                        var style = 'overflow-y: auto; max-height: 400px; left: ' + $peoplePicker.offset().left + 'px; top: ' +
+                        var style = 'overflow-x: hidden; overflow-y: auto; max-height: 400px; left: ' + $peoplePicker.offset().left + 'px; top: ' +
                             ($peoplePicker.offset().top + 42) + 'px; width: ' +
                             $peoplePicker.outerWidth() + 'px';
                         return style;

@@ -36,7 +36,7 @@
 
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
-
+    <label class="ms-Label">Single people picker</label>
     <div class="ms-PeoplePicker">
         <div class="ms-PeoplePicker-searchBox">
             <div class="ms-TextField  ms-TextField--textFieldUnderlined ">
@@ -44,6 +44,7 @@
             </div>
         </div>
     </div>
+    <label class="ms-Label">Multiple people picker</label>
     <div class="ms-PeoplePicker">
         <div class="ms-PeoplePicker-searchBox">
             <div class="ms-TextField  ms-TextField--textFieldUnderlined ">
