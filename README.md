@@ -21,5 +21,5 @@ Regarding the logic, every time that user will write something in the text field
 /_api/search/query?querytext='*" + "Characters to search" + "*'&rowlimit=10&sourceid='b09a7990-05ea-4af9-81ef-edfab16c4e31'
 ```
 
-As you can see I specified a row limit to not overlook the performance and most important, I have narrowed the field of action to work only with people and user profiles.
+As you can see I specified a row limit to not overlook the performance and most important, I have narrowed the field of action to work only with people and user profiles (sourceid='b09a7990-05ea-4af9-81ef-edfab16c4e31').
 Naturally the App is ready to go, then you can deploy directly on your SharePoint Online or On-Premise.
