@@ -1,6 +1,6 @@
 # Office UI Fabric People Picker and SharePoint search better together part 1
 
-[Read the article on my blog](http://www.delucagiuliano.com/office-ui-fabric-people-picker-and-sharepoint-search-better-together-part-1)
+[READ THE ARTICLE ON MY BLOG: http://www.delucagiuliano.com/office-ui-fabric-people-picker-and-sharepoint-search-better-together-part-1/](http://www.delucagiuliano.com/office-ui-fabric-people-picker-and-sharepoint-search-better-together-part-1)
 
 In this article I'll be focused on Office UI Fabric, the official Office and Office 365 front-end framework, in particular I'll talk about the People Picker, an important component to have a user friendly and comfortable functionality for the end user.
 
